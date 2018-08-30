@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,8 +19,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-pb-sHe">
-                                <rect key="frame" x="20" y="40" width="335" height="80.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-pb-sHe">
+                                <rect key="frame" x="20" y="40" width="335" height="525.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHN-gs-TGB">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
@@ -29,7 +30,7 @@
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal Plan" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="27q-6D-GT2">
                                         <rect key="frame" x="0.0" y="20.5" width="335" height="30"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" red="0.012487856217616611" green="0.012487856217616611" blue="0.012487856217616611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -40,16 +41,28 @@
                                             <action selector="setDeafaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJP-Pc-zIb"/>
                                         </connections>
                                     </button>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-l9-gCh">
+                                        <rect key="frame" x="0.0" y="80.5" width="335" height="335"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="vAz-l9-gCh" secondAttribute="height" multiplier="1:1" id="PUp-eV-rfn"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="8Hz-bi-qHM" appends="YES" id="gsN-TY-CgT"/>
+                                        </connections>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v2I-o3-aBi">
+                                        <rect key="frame" x="0.0" y="415.5" width="200" height="110"/>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="27q-6D-GT2" secondAttribute="trailing" id="7JM-Q8-30W"/>
-                                    <constraint firstAttribute="trailing" secondItem="27q-6D-GT2" secondAttribute="trailing" id="f4w-il-lf6"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tdv-pb-sHe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ezf-ng-gsm"/>
+                            <constraint firstItem="tdv-pb-sHe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="eH7-SE-dIR"/>
                             <constraint firstItem="tdv-pb-sHe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gNN-i4-cca"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tdv-pb-sHe" secondAttribute="trailing" constant="20" id="yV0-p5-XtA"/>
                         </constraints>
@@ -58,26 +71,20 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="jHN-gs-TGB" id="LmQ-Rt-lv0"/>
                         <outlet property="nameTextField" destination="27q-6D-GT2" id="oVf-Gr-I8U"/>
+                        <outlet property="photoImageView" destination="vAz-l9-gCh" id="UmD-gj-LNB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="8Hz-bi-qHM">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="7ci-oe-mts"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-209" y="132"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="R6J-I9-PI7">
-            <objects>
-                <viewController id="Rbp-n2-4sN" customClass="ViewController" customModule="foodTracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Uiu-sl-xnf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="TdN-Vg-PbT"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6J-aH-Ico" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="442" y="132"/>
+            <point key="canvasLocation" x="-210.40000000000001" y="131.78410794602701"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="350" height="233"/>
+    </resources>
 </document>

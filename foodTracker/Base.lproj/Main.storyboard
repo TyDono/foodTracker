@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-pb-sHe">
-                                <rect key="frame" x="20" y="40" width="335" height="516.5"/>
+                                <rect key="frame" x="20" y="40" width="335" height="459.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHN-gs-TGB">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
@@ -52,7 +52,12 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v2I-o3-aBi" customClass="RatingControl" customModule="foodTracker">
-                                        <rect key="frame" x="0.0" y="415.5" width="200" height="101"/>
+                                        <rect key="frame" x="0.0" y="415.5" width="252" height="44"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="starCount">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -64,7 +69,7 @@
                         <constraints>
                             <constraint firstItem="tdv-pb-sHe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="eH7-SE-dIR"/>
                             <constraint firstItem="tdv-pb-sHe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gNN-i4-cca"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tdv-pb-sHe" secondAttribute="bottom" constant="110.5" id="l4g-lW-msQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tdv-pb-sHe" secondAttribute="bottom" id="l4g-lW-msQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tdv-pb-sHe" secondAttribute="trailing" constant="20" id="yV0-p5-XtA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -82,7 +87,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-210.40000000000001" y="131.78410794602701"/>
+            <point key="canvasLocation" x="-271" y="40"/>
         </scene>
     </scenes>
     <resources>

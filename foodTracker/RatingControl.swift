@@ -13,7 +13,11 @@ import UIKit
     //MARK: Properties
     private var ratingButtons = [UIButton]()
     
-    var rating = 0
+    var rating = 0 {
+        didSet {
+            updateButtonSelecttionStates()
+        }
+    }
     
     @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
         didSet {
@@ -41,7 +45,21 @@ import UIKit
     
     //MARK Button Action
     @objc func ratingButtonTapped(button: UIButton) {
-        print("Button pressed :D Bob Ross will now claim your soul!")
+        guard let index = ratingButtons.index(of: button) else {
+            fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")
+        }
+        
+        //Calculate the rating of the selected button
+        let selectedRating = index + 1
+        
+        if selectedRating == rating {
+            // If the selece star represents the current rating, reset the rating to 0
+            rating = 0
+            
+        } else {
+            // Otherwise set the rating to the selceted star
+        rating = selectedRating
+        }
     }
     
     //MARK: Private Methods
@@ -86,6 +104,13 @@ import UIKit
             
             // Add the new button to the rating buton array
             ratingButtons.append(button)
+        }
+        
+    }
+    private func updateButtonSelecttionStates() {
+        for (index, button) in ratingButtons.enumerated() {
+            // If the index of a button is less than the rating, that button should bd selected.
+            button.isSelected = index < rating
         }
         
     }

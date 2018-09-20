@@ -50,7 +50,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     func imagePickerControllerDidCancel(_picker: UIImagePickerController, didFinishPickingMediaLawWithInfo info: [String : Any]) {
         
         // The info dictionary may contain multiple resresentation of the image. You want to use the original.
-        guard let selectedImage = info[UIImagePickerControllerOriginalImage] as? UIImage else {
+        guard let selectedImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage else {
             fatalError("Expected adictionary containing an image, but was provided the following: \(info) ")
         }
         
@@ -86,3 +86,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}

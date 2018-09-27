@@ -18,23 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-pb-sHe">
-                                <rect key="frame" x="20" y="40" width="335" height="327.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-pb-sHe">
+                                <rect key="frame" x="20" y="40" width="335" height="411.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHN-gs-TGB">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHN-gs-TGB">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal Plan" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="27q-6D-GT2">
-                                        <rect key="frame" x="0.0" y="20.5" width="335" height="30"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="335" height="30"/>
                                         <color key="textColor" red="0.012487856217616611" green="0.012487856217616611" blue="0.012487856217616611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-l9-gCh">
-                                        <rect key="frame" x="0.0" y="50.5" width="233" height="233"/>
+                                        <rect key="frame" x="0.0" y="74.5" width="281" height="281"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vAz-l9-gCh" secondAttribute="height" multiplier="1:1" id="PUp-eV-rfn"/>
@@ -44,7 +44,7 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v2I-o3-aBi" customClass="RatingControl" customModule="foodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="283.5" width="252" height="44"/>
+                                        <rect key="frame" x="0.0" y="367.5" width="252" height="44"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="size" keyPath="starSize">
                                                 <size key="value" width="44" height="44"/>
@@ -64,7 +64,6 @@
                         <constraints>
                             <constraint firstItem="tdv-pb-sHe" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="eH7-SE-dIR"/>
                             <constraint firstItem="tdv-pb-sHe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gNN-i4-cca"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tdv-pb-sHe" secondAttribute="bottom" id="l4g-lW-msQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tdv-pb-sHe" secondAttribute="trailing" constant="20" id="yV0-p5-XtA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -87,6 +86,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="350" height="233"/>
+        <image name="Image" width="299" height="281"/>
     </resources>
 </document>

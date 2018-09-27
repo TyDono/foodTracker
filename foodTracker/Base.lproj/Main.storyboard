@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="tdv-pb-sHe">
-                                <rect key="frame" x="20" y="40" width="335" height="357.5"/>
+                                <rect key="frame" x="20" y="40" width="335" height="327.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHN-gs-TGB">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHN-gs-TGB">
                                         <rect key="frame" x="0.0" y="0.0" width="86.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -33,15 +33,8 @@
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eGw-yL-0FX">
-                                        <rect key="frame" x="0.0" y="50.5" width="148" height="30"/>
-                                        <state key="normal" title="Set Default Label text"/>
-                                        <connections>
-                                            <action selector="setDeafaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JJP-Pc-zIb"/>
-                                        </connections>
-                                    </button>
                                     <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="vAz-l9-gCh">
-                                        <rect key="frame" x="0.0" y="80.5" width="233" height="233"/>
+                                        <rect key="frame" x="0.0" y="50.5" width="233" height="233"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="vAz-l9-gCh" secondAttribute="height" multiplier="1:1" id="PUp-eV-rfn"/>
@@ -51,7 +44,7 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="v2I-o3-aBi" customClass="RatingControl" customModule="foodTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="313.5" width="252" height="44"/>
+                                        <rect key="frame" x="0.0" y="283.5" width="252" height="44"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="size" keyPath="starSize">
                                                 <size key="value" width="44" height="44"/>
@@ -80,6 +73,7 @@
                         <outlet property="mealNameLabel" destination="jHN-gs-TGB" id="LmQ-Rt-lv0"/>
                         <outlet property="nameTextField" destination="27q-6D-GT2" id="oVf-Gr-I8U"/>
                         <outlet property="photoImageView" destination="vAz-l9-gCh" id="UmD-gj-LNB"/>
+                        <outlet property="ratingControl" destination="v2I-o3-aBi" id="4kW-Tm-LSg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
